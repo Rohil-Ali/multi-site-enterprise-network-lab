@@ -105,11 +105,11 @@ Example configuration:
 interface GigabitEthernet0/0/0.10
  encapsulation dot1Q 10
  ip address 192.168.10.1 255.255.255.0
-!
+
 interface GigabitEthernet0/0/0.20
  encapsulation dot1Q 20
  ip address 192.168.20.1 255.255.255.0
-!
+
 interface GigabitEthernet0/0/0.30
  encapsulation dot1Q 30
  ip address 192.168.30.1 255.255.255.0
@@ -134,12 +134,6 @@ I configured **OSPF Area 0** between `HQ-RTR` and `B1-RTR`.
 The routers are connected using the `10.0.0.0/30` WAN network.
 
 Using OSPF means the routers can dynamically learn about the networks at the other site instead of relying on manually configured static routes.
-
-For example, `HQ-RTR` learns the Branch network:
-
-```text
-O    192.168.40.0/24 [110/65] via 10.0.0.2
-```
 
 I verified the OSPF neighbour relationship with:
 
@@ -166,7 +160,7 @@ Once the routing was configured, I tested connectivity across the network.
 One of the end-to-end tests was from the Branch staff PC to the HQ web server:
 
 ```text
-BR1-STAFF-PC2 -> 192.168.30.10
+BR1-STAFF-PC2 -> 192.168.30.2
 ```
 
 The traffic has to travel from the Branch network, through `B1-RTR`, across the WAN, through `HQ-RTR` and finally into the HQ server network.
