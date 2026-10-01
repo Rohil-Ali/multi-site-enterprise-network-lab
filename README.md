@@ -224,8 +224,6 @@ HQ-PUB-WEB01
 
 The purpose of this separation is to prevent a public-facing server from sitting directly on the internal server network.
 
-![Updated Server and DMZ Topology](img/server-dmz-topology.png)
-
 ---
 
 ## 8. Network Services
@@ -262,6 +260,8 @@ intranet.hq.local -> 192.168.30.30
 This gives the internal network a simple way to resolve services by name rather than having to rely on IP addresses.
 
 ![DNS Configuration](img/dns-config.png)
+
+![DNS Evidence](img/dns-config-evidence.png)
 
 ### Syslog & NTP
 
@@ -442,8 +442,6 @@ When making changes to interfaces or security policies, I need to check the wide
 
 # What's Next
 
-* [ ] Finish testing and refining the ACL policies
-* [ ] Configure switch port security
 * [ ] Harden unused switch ports
 * [ ] Add any further useful network services
 * [ ] Start the Python/Netmiko automation stage
